@@ -1,0 +1,40 @@
+Exercise 2
+
+1. In C++, what's the difference between a declaration and a definition?
+
+	Declaration:	To declare something is to say: Something exists, and it has this type and this identifier.
+					It's what the compiler needs to accept references to this identifier.
+
+	Definition:		Here the identifier gets instantiated/implemented.
+					It's what the linker needs to link references to theire entities.
+
+2. What are header files used for?
+
+	Header files contain declarations of "stuff" that is implemented in source files. They serve as interfaces 
+	to introduce the "stuff" to other source files.
+	So if one wants to use a function in different source files it's sufficient to implement the function in
+	one source and than use it in other sources by including the header file of the source in which the function
+	is implemented.
+
+3. When a compiler creates a programm, in what part of the construction process does it use header files and 
+   in what part libraries? (Try to answer the question why the compiler uses header files and libraries.)
+
+	Header files are used to compile source code into object files. Libraries are used when the linker links all
+	the object files together to make the executable.
+	Header files are used as interfaces, so that the compiler is assured during the making of the object file 
+	that there is an implementation for the functions from the header files somewhere.
+	Libraries contain loads of compiled code that can be linked to the executable if needed.
+
+4. Is a library an object module?
+	
+	A library is not an object module, but a library consists of lots of (small) object modules.
+	The problem with big object files is, that as soon as one function of it is need, everything gets linked to
+	the executable thus wasting ressources. 
+	When linking a library only those small object files with the specific functions are linked to the executable.
+
+5. Why is an object module obtained after compiling a source containing int main() not an executable?
+
+	The object module is just a translation from source code into machine code, it's not something one can
+	actually run.
+	Also at this stage there might be a lot of stuff that has been declared in the source but lacks a definition
+	because other object files containing these definitions haven't been linked yet.
