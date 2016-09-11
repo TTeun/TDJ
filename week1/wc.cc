@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <cstdio>
 #include <string>
 #include <cctype>
@@ -45,6 +44,7 @@ int main(int argc, char * argv[]){
             while (getline(cin, line))
                 ++numLines;
             cout << numLines << '\n';
+            break;
         }
         case WORDS:
         {
