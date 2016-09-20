@@ -2,30 +2,26 @@
 #include "strings.h"
 
 int processOptions(Mode mode) {
-	if (mode == error) {
+	switch (mode)
+	{
+	case error:
 		cout << "Wrong input" << '\n';
 		return -1;
-	}
-
-	if (mode == none)
+	case none:
 		return 0;
-
-	if (mode == version) {
+	case version:
 		cout << versionStr << '\n';
 		return 0;
-	}
-
-	if (mode == help) {
+	case help:
 		cout << helpStr << '\n';
 		return 0;
-	}
+	default:
+		if (isatty(STDIN_FILENO)) {
+			cout << "No file redirection was used!" << '\n';
+			return -1;
+		}
 
-	if (isatty(STDIN_FILENO)) {
-		cout << "No file redirection was used!" << '\n';
-		return -1;
+		transformInput(mode == lower ? ::tolower : ::toupper);
+		return 0;
 	}
-
-	transformInput(mode == lower ? ::tolower : ::toupper);
-	return 0;
 }
-
