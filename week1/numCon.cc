@@ -11,21 +11,21 @@ int main(int argc, char * argv[]) {
     }
 
     size_t radix, num;
-    stringstream radixStr(argv[1]);
+    istringstream radixStr(argv[1]);
     radixStr >> radix;
 
-    stringstream numStr(argv[2]);
+    istringstream numStr(argv[2]);
     numStr >> num;
 
     string output = "";
-    char tempChar;
+    char tempChar = (num % radix);
     while (num) {
-        tempChar = (num % radix);
         tempChar += tempChar > 9 ? ('a' - 10) : '0';
         output.insert(output.begin(), tempChar);
         num /= radix;
+        tempChar = (num % radix);
     }
 
-    cout << output << endl;
+    cout << output << '\n';
     return 0;
 }
