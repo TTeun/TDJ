@@ -1,53 +1,90 @@
 #include <iostream>
-#include <sstream>
 #include <string>
-#include <stdlib.h>
 
 using namespace std;
 
-int main(int argc, char * argv[]) {
-	int storedValue = 0;
-	int inputNumber;
-	string input;
-	char action;
-	while (true) {
+int main()
+{
+
+	enum Type
+	{
+		UNKNOWN, ERROR, OK
+	};
+	
+	int internalVariable = 0;
+	string inputLine;
+	string inputNumber;	
+	int inputVariable;
+	char instruction;
+	int typeFlag = UNKNOWN;
+
+	while(1)
+	{
 		cout << "> ";
-		cin >> input;
-		action = input[2];
-		if (action == 't')
-			exit(0);
 
-		cin >> input;
-		inputNumber = stoi(input);
+		cin >> inputLine;		// read the instruction from the command line
+		instruction = inputLine[2];
+		cin >> inputNumber;		// read the variable for computation
+		inputVariable = stoi(inputNumber);
 
-		switch (action) {
-		case 'o':
-			storedValue = inputNumber;
-			break;
-		case 'd':
-			storedValue += inputNumber;
-			break;
-		case 'b':
-			storedValue -= inputNumber;
-			break;
-		case 'l':
-			storedValue *= inputNumber;
-			break;
-		case 'v':
-			if (inputNumber != 0)
-				storedValue /= inputNumber;
-			else
-				cout << "Division by zero " << '\n';
-			break;
-		default:
-			cout << "erroneous input" << '\n';
+		if (inputLine == "ret")		// if the instruction is "ret" exit the programm
+		{
 			break;
 		}
-		cout << "x = " << storedValue << '\n';
+
+
+		switch(instruction)		// do stuff depending on the obtained instruction
+		{
+			case 'o':
+				if (inputLine == "sto")
+				{
+					internalVariable = inputVariable;
+					typeFlag = OK;
+					break;
+				}
+			case 'd':
+				if (inputLine == "add")
+				{
+					internalVariable += inputVariable;
+					typeFlag = OK;
+					break;
+				}	
+			case 'b':
+				if (inputLine == "sub")
+				{
+					internalVariable -= inputVariable;
+					typeFlag = OK;
+					break;
+				}
+			case 'l':
+				if (inputLine == "mul")
+				{
+					internalVariable *= inputVariable;
+					typeFlag = OK;
+					break;
+				}
+			case 'v':
+				if (inputLine == "div")
+				{
+					if (inputVariable == 0)
+					{
+						cout << "Division by 0 is not allowed! \n";
+						typeFlag = ERROR;
+						break;			
+					}
+					internalVariable /= inputVariable;
+					typeFlag = OK;
+					break;
+				 }
+			default:
+				cout << "Wrong command, use sto x, add x, sub x, mul x, div x or ret \n";
+				typeFlag = ERROR;
+		}
+		
+		if (typeFlag == OK)
+		{
+			cout << "x = " << internalVariable << "\n";		// print actual value to the command line
+		}
 	}
-
-
-
-
-	return 0;
 }
+		

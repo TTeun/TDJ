@@ -10,10 +10,11 @@ int main(int argc, char * argv[]) {
         return 0;
     }
 
-    size_t radix, num;
+    size_t radix;
     istringstream radixStr(argv[1]);
     radixStr >> radix;
 
+    size_t num;
     istringstream numStr(argv[2]);
     numStr >> num;
 
