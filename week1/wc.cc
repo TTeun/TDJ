@@ -51,11 +51,12 @@ int main(int argc, char * argv[]){
             int numWords = 0;
             enum {word, space};
             int state = space;
-            while  (cin.get(ch)){
+            while (cin.get(ch)){
                 numWords += state == space && not isspace(ch);
                 state = isspace(ch) ? space : word;
             }
             cout << numWords << '\n';
+            break;
         }
     }
 
