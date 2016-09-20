@@ -1,0 +1,12 @@
+Een line
+een line // met comment
+/* een C-style comment
+over twee regels */
+nog een lijn
+{
+	{
+	{
+		hier een nestje
+	}
+	}
+}

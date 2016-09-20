@@ -6,8 +6,15 @@
 using namespace std;
 
 int main(int argc, char * argv[]) {
-    enum Mode { ERROR, BYTES, LINES, WORDS };
-    int mode;
+    enum Mode 
+    { 
+        ERROR, 
+        BYTES, 
+        LINES, 
+        WORDS 
+    };
+
+    Mode mode;
     switch (argv[1][0]) {
     case 'b':
         mode = BYTES;
