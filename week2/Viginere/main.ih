@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <cctype>
+#include <cmath>
+#include <fstream>
+
+using namespace std;
+
+enum Action 
+{
+  USAGE,
+  ENCRYPT,
+  DECRYPT
+};
+
+struct Vars 
+{
+  ifstream file;
+  char* key;
+  int len;
+  Action action;
+}; 
+
+Vars arguments(ifstream file, int argc, char* key);
+char* vigenere(Vars vars);
