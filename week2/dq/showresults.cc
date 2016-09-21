@@ -8,5 +8,5 @@ void showResults(variables& var) {
 	cout << "Number of eoln comments: " << var.eolnComments << '\n';
 	cout << "Number of C-style comments: " << var.cComments << '\n';
 	cout << "Maximum nesting depth: " << var.maxNest << '\n';
-	cout << "Documentation quality: " << findPercentage(var) << "%\n";
+	cout << "Documentation quality: " << findPercentage(var) << "\%\n";
 }

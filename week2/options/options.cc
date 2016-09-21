@@ -11,6 +11,6 @@ using namespace std;
 #include "processoptions.cc"
 
 int main(int argc, char **argv) {
-	Mode mode = getOptions(argc, argv);
-	return processOptions(mode);
+    Mode mode = getOptions(argc, argv);
+    return processOptions(mode);
 }
