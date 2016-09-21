@@ -1,16 +1,16 @@
 #include <iostream>
 #include <cmath>
-#include <stdlib.h>
+#include <cstdlib>
 
 using namespace std;
 
 double input;
-int xx;
-string yy;
-double rounded;
+int xx = 1;
+string yy = "00";
+double rounded = 0;
 
 int main()
-  {
+{
   while(true)
   {
     cout << "? ";
