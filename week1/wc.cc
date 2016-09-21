@@ -34,9 +34,9 @@ int main(int argc, char * argv[]) {
     size_t ctr = 0;
     char ch;
     if (mode != WORDS) {
-        while (cin.get(ch)) {
+        while (cin.get(ch)) 
             ctr += mode == BYTES ? 1 : (ch == '\n');
-        }
+        
     } else {
         enum State {
             word,
