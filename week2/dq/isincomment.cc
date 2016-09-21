@@ -13,5 +13,6 @@ void processCComments(string& inputLine, variables& var) {
 		}
 	}
 	var.initialCComment = false;
-	// If the first line is not a C-Style comment, there is no initial C-style comment
+	// If the first line is not a C-Style comment, there is no initial
+    // C-style comment
 }

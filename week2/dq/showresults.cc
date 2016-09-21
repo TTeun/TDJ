@@ -1,5 +1,5 @@
-int findPercentage(int docCounter, int lineCounter) {
-	int value = 200 * (docCounter / static_cast<float>(lineCounter));
+int findPercentage(variables& var) {
+	int value = 200 * (var.docCounter / static_cast<float>(var.lineCounter));
 	return value > 100 ? 100 : value;
 }
 
@@ -8,5 +8,5 @@ void showResults(variables& var) {
 	cout << "Number of eoln comments: " << var.eolnComments << '\n';
 	cout << "Number of C-style comments: " << var.cComments << '\n';
 	cout << "Maximum nesting depth: " << var.maxNest << '\n';
-	cout << "Documentation quality: " << findPercentage(var.docCounter, var.lineCounter) << "%\n";
+	cout << "Documentation quality: " << findPercentage(var) << "%\n";
 }
