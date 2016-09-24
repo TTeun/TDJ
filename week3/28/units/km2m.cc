@@ -1,6 +1,6 @@
 #include "units.ih"
 
-int km2m(double km)
+int units::km2m(double km)
 {
   return km * 1000;
 }
