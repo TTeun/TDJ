@@ -1,0 +1,15 @@
+Data encapsulation is a process in which the data is put in a 'capsule', and there are only several methods to access the data inside. The data can either be public or private.
+Data hiding is a form of data encapsulation. Here the data is always private and non-accessible, which results into data security. 
+If a program has private data, then this secures the integrity of the program, because the data cannot be changed. This is what makes these concepts important for classes, since integrity is an important aspect of classes.
+An example is given below.
+
+class Example
+{
+  std::string d_text const;
+
+  public:
+    Example(std::string const &text);
+};
+
+Here we have that the data d_text is private, which is a result of data hiding (and thus also of data encapsulation). It cannot be changed, because it is a const, which adds to the integrity of the program. 
+The implementation is irrelevant, because we already know that d_text cannot be changed, not even in the function Example, since it is a const. Also it is private, and thus the integrity is guaranteed.
