@@ -1,21 +1,20 @@
-#include "main.h"
+#include "main.ih"
 
-Vars arguments(ifstream file, int argc, char* key)
+Vars arguments(int argc, char key)
 {
-  Vars vars;
-  vars.file = file;
-  vars.key = key;
-  vars.len = sizeof(key);
-  switch(argc) 
-  {
-  case 1:
-    vars.action = ENCRYPT;
-    break;
-  case 2:
-    vars.action = DECRYPT;
-    break;  
-  default:
-    vars.action = USAGE;
-  }
-  return vars;
+	Vars vars;
+	vars.key = std::string(key);
+	vars.len = sizeof(key);
+	switch(argc)
+	{
+		case 1:
+			vars.action = ENCRYPT;
+			break;
+		case 2:
+			vars.action = DECRYPT;
+		break;
+			default:
+			vars.action = USAGE;
+	}
+	return vars;
 }

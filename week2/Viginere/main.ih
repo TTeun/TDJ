@@ -16,11 +16,13 @@ enum Action
 
 struct Vars 
 {
-  ifstream file;
-  char* key;
+  string key;
   int len;
   Action action;
 }; 
 
-Vars arguments(ifstream file, int argc, char* key);
-char* vigenere(Vars vars);
+Vars arguments(int argc, char key);
+void process(Vars vars);
+void vigenereEncrypt(Vars vars);
+void vigenereDecrypt(Vars vars);
+char printableAscii(char ch);
