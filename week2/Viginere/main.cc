@@ -1,8 +1,8 @@
 #include "main.ih"
 
-int main(int argc, char* argv)
+int main(int argc, char* argv[])
 {
 	Vars vars;
-	vars = arguments(argc, argv[0]);
+	vars = arguments(argc, argv[1]);
 	process(vars);
 }

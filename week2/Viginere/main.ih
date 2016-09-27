@@ -21,7 +21,7 @@ struct Vars
   Action action;
 }; 
 
-Vars arguments(int argc, char key);
+Vars arguments(int argc, char * key);
 void process(Vars vars);
 void vigenereEncrypt(Vars vars);
 void vigenereDecrypt(Vars vars);

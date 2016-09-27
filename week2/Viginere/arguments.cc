@@ -1,6 +1,6 @@
 #include "main.ih"
 
-Vars arguments(int argc, char key)
+Vars arguments(int argc, char * key)
 {
 	Vars vars;
 	vars.key = std::string(key);
