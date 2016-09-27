@@ -3,26 +3,28 @@
 #include <string>
 #include <cctype>
 #include <cmath>
-#include <fstream>
 
 using namespace std;
 
-enum Action 
+enum Action
 {
-  USAGE,
-  ENCRYPT,
-  DECRYPT
+    USAGE,
+    ENCRYPT,
+    DECRYPT
 };
 
-struct Vars 
+struct Vars
 {
-  string key;
-  int len;
-  Action action;
-}; 
+    int alphabetSize;    // size of alphabet in use
+    int keyIdx;          // index in key, will loop over key several times
+    int len;             // length of key
+    string key;          // key
+    Action action;       // DECRYPT, ENCRYPT or USAGE.
+};
 
-Vars arguments(int argc, char * key);
-void process(Vars vars);
-void vigenereEncrypt(Vars vars);
-void vigenereDecrypt(Vars vars);
-char printableAscii(char ch);
+Vars arguments(int, char *);         // collect arguments to initialize struct
+void process(Vars&);                 // process the input 
+int  charToPosition(char);           // returns position in alphabet of char
+char positionToChar(int);            // returns char given position in alphabet
+char printableAscii(char, Vars&);    // shifts char 
+void vigenerePass(Vars&);            // main processing loop

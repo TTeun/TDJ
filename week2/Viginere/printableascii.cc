@@ -1,11 +1,15 @@
 #include "main.ih"
 
-char printableAscii(char ch)
+char printableAscii(char ch, Vars& vars)
 {
-	char processed = ch;
-	if (ch < 9)
-        processed = static_cast<char>(ch + 119);
-    if (ch > 127)
-        processed = static_cast<char>(ch - 119);
-    return processed;
-} 
+    int posInAlph = charToPosition(ch);
+    int shift = charToPosition(vars.key[vars.keyIdx % vars.len]);
+
+    vars.action == ENCRYPT ? (posInAlph += shift) : (posInAlph -= shift);
+
+    posInAlph = posInAlph < 0                 ? posInAlph + vars.alphabetSize :
+                posInAlph > vars.alphabetSize ? posInAlph - vars.alphabetSize :
+                posInAlph;
+
+    return positionToChar(posInAlph);
+}
