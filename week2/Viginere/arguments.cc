@@ -3,7 +3,7 @@
 Vars arguments(int argc, char key)
 {
 	Vars vars;
-	vars.key = key;
+	vars.key = std::string(key);
 	vars.len = sizeof(key);
 	switch(argc)
 	{
