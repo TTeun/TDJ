@@ -1,0 +1,9 @@
+#include <iostream>
+#include <iomanip>
+#include <climits>
+
+using namespace std;
+
+void printBigAlt(ostream& out, long long value);
+void printBig(ostream& out, long long value);
+void printEm(ostream& out, long long value);
