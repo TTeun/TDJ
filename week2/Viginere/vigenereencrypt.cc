@@ -6,5 +6,9 @@ void vigenereEncrypt(Vars vars)
 	int number = 0;
 	char ch;
 	while ((ch = cin.get()) != -1)
+	{
 		cout << static_cast<char>(printableAscii(ch + vars.key[number % vars.len]));
+		++number;
+	}
+	cout << "\n";
 }
