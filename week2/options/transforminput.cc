@@ -1,7 +1,7 @@
+#include "main.ih"
+
 void transformInput(int (*toCase)(int)) {
-    string line;
-    while (getline(cin, line)) {
-        transform(line.begin(), line.end(), line.begin(), toCase);
-        cout << line << '\n';
-    }
+    char ch;
+    while ((ch = cin.get()) != -1)
+        cout << (char)toCase(ch);
 }

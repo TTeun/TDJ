@@ -1,18 +1,18 @@
-#include "transforminput.cc"
+#include "main.ih"
 #include "strings.h"
 
 int processOptions(Mode mode) {
     switch (mode)
     {
-    case error:
+    case ERROR:
         cout << "Wrong input" << '\n';
         return -1;
-    case none:
+    case NONE:
         return 0;
-    case version:
+    case VERSION:
         cout << versionStr << '\n';
         return 0;
-    case help:
+    case HELP:
         cout << helpStr << '\n';
         return 0;
     default:
@@ -21,7 +21,7 @@ int processOptions(Mode mode) {
             return -1;
         }
 
-        transformInput(mode == lower ? ::tolower : ::toupper);
+        transformInput(mode == LOWER ? ::tolower : ::toupper);
         return 0;
     }
 }

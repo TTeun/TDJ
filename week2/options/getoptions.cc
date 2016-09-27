@@ -1,11 +1,4 @@
-enum Mode {
-    help,
-    version,
-    capitalize,
-    lower,
-    error,
-    none,
-};
+#include "main.ih"
 
 Mode getOptions(int argc, char **argv) {
 
@@ -20,27 +13,27 @@ Mode getOptions(int argc, char **argv) {
         {0, 0, 0, 0}
     };
 
-    Mode mode = none;
-    int c;
+    Mode mode = NONE;
+    int ch;
 
-    while ((c = getopt_long (argc, argv, "hvcl", longOpts, 0)) != -1) {
-        switch (c) {
+    while ((ch = getopt_long (argc, argv, "hvcl", longOpts, 0)) != -1) {
+        switch (ch) {
         case 'h':
-            return help;
+            return HELP;
         case 'v':
-            return version;
+            return VERSION;
         case 'c':
-            if (mode == lower)
-                return error;
-            mode = capitalize;
+            if (mode == LOWER)
+                return ERROR;
+            mode = CAPITALIZE;
             break;
         case 'l':
-            if (mode == capitalize)
-                return error;
-            mode = lower;
+            if (mode == CAPITALIZE)
+                return ERROR;
+            mode = LOWER;
             break;
         default:
-            return error;
+            return ERROR;
         }
     }
     return mode;
