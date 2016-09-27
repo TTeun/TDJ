@@ -1,0 +1,5 @@
+
+unsigned long long recurFib(unsigned long long * fibval, unsigned long long value);
+unsigned long long fib(unsigned long long value);
+unsigned long long rawfib(unsigned long long value);
+
