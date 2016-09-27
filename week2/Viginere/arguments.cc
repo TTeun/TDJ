@@ -1,19 +1,19 @@
 #include "main.ih"
 
-Vars arguments(int argc, char * key)
+Vars arguments(int argc, char* key)
 {
 	Vars vars;
-	vars.key = std::string(key);
-	vars.len = sizeof(key);
+	vars.key = string(key);
+	vars.len = vars.key.size();
 	switch(argc)
 	{
-		case 1:
+		case 2:
 			vars.action = ENCRYPT;
 			break;
-		case 2:
+		case 3:
 			vars.action = DECRYPT;
-		break;
-			default:
+			break;
+		default:
 			vars.action = USAGE;
 	}
 	return vars;
