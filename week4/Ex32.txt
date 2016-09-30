@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------------
         definition:         rewrite:          pointers:                semantics:
 ------------------------------------------------------------------------------------------------------------
-a.      int x[8];           x[3] = x[2];      *(x + 3) = *(x + 2);	   x + 2 points to the 
+a.      int x[8];           x[3] = x[2];      *(x + 3) = *(x + 2);     x + 2 points to the 
                                                                        location of the 2nd
                                                                        int beyond x. That
                                                                        element is reached
@@ -24,7 +24,7 @@ b.      char *argv[8];      cout << argv[2];  cout << *(argv + 2);     argv + 2 
                                                                        at this location is printed 
                                                                        to the screen with cout.
 
-c.      int x[8];           &x[10] - &x[3];   &*(x + 10) - &*(x + 3);	  x + 10 points to the 
+c.      int x[8];           &x[10] - &x[3];   &*(x + 10) - &*(x + 3);  x + 10 points to the 
                                                                        location of the 10th
                                                                        int beyond x. That
                                                                        element is reached
