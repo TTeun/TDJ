@@ -1,6 +1,8 @@
 #include "tokenizer.h"
 #include "../enums/enums.h"
 #include <string>
+#include <climits>
+#include <stdexcept>
 #include <iostream>
 
 using namespace std;
