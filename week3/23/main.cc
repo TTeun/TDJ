@@ -1,5 +1,4 @@
 #include <iostream>
-#include "enums/enums.h"
 #include "memory/memory.h"
 
 int main(){
