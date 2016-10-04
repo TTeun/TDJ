@@ -6,8 +6,9 @@ class Demo {
   public:
    Demo() { }
 
-   void run() { cout << "Called from object or from function expecting a reference to object" << '\n'; }
-   const void run() const { cout << "Called from const object" << '\n'; }
+   void run() &{ cout << "Called from object or from function expecting a reference to object" << '\n'; }
+   void run() const& { cout << "Called from const object" << '\n'; }
+   void run() && { cout << "Called from anonymous object" << '\n'; }
  };
 
 int main(){
