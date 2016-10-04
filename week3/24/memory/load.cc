@@ -1,6 +1,5 @@
 #include "memory.ih"
 
-int Memory::load(std::string&& address) {
-	long idx = index(address);
+int Memory::load(int idx) {
 	return inRange(idx) ? d_memory[idx] : 0;
 }

@@ -12,10 +12,9 @@ public:
 	Memory(int);
 	~Memory();
 
-	void store(std::string&&, int);
-	int load(std::string&& );
+	void store(int, int);
+	int load(int);
 
 private:
 	bool inRange(int);
-	long index(std::string&);
 };

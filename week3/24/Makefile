@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -pedantic -std=c++11
+CFLAGS = -pedantic -std=c++11 -Wall
 DIRS = memory/*.cc 	cpu/*.cc 
 
 all: $(DIRS)

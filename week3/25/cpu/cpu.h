@@ -1,17 +1,6 @@
 #include "../enums/enums.h"
 #include "../memory/memory.h"
-
-class Tokenizer {
-public:
-	Tokenizer() {};
-	Opcode opcode() {return ADD;};
-	void reset() {};
-};
-
-typedef struct Operand {
-	OperandType type;
-	int value;
-} Operand;
+#include "../tokenizer/tokenizer.h"
 
 class CPU
 {
@@ -20,6 +9,12 @@ private:
 	Tokenizer d_tokenizer;
 	int * const d_registers;
 	int NREGISTERS = 5;
+
+
+typedef struct Operand {
+	OperandType type;
+	int value;
+} Operand;
 
 public:
 	CPU(Memory *);

@@ -1,7 +1,6 @@
 #include "memory.ih"
 
-void Memory::store(std::string&& address, int value) {
-	long idx = index(address);
+void Memory::store(int idx, int value) {
 	if (inRange(idx))
 		d_memory[idx] = value;
 }
