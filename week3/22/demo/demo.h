@@ -6,9 +6,13 @@ class demo
 {
     public:
         demo();
-        void run(demo& var) const;
-        void run(demo const &var) const;
-        void run(demo &&var) const;
+        void run() const{
+			std::cout << "1" << '\n';
+		}
+		
+		const void run() const{
+			std::cout << "1" << '\n';
+		}
     private:
 };
         
