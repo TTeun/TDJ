@@ -2,5 +2,5 @@
 
 int units::nm2m(double nm)
 {
-  return nm * 1852;
+  return round(nm * 1852);
 }

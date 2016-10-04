@@ -1,0 +1,20 @@
+#include <unistd.h>
+#include <getopt.h>
+#include <string>
+#include <algorithm>
+#include <iostream>
+
+enum Mode {
+    HELP,
+    VERSION,
+    CAPITALIZE,
+    LOWER,
+    ERROR,
+    NONE,
+};
+
+using namespace std;
+
+Mode getOptions(int argc, char **argv);
+void transformInput(int (*toCase)(int));
+int processOptions(Mode mode);

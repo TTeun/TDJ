@@ -2,5 +2,5 @@
 
 double units::ft2m(double feet)
 {
-  return feet / 3;
+  return feet * 3 / 10;
 }

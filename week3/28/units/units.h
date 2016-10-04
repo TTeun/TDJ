@@ -6,11 +6,11 @@
 class units
 {
     public:
-        double kts2m_s(double knots);
-        double ft2m(double feet);
-        double ft_min2m_s(int ftmin);
-        int nm2m(double nm);
-        int km2m(double km);
+        static inline double kts2m_s(double);
+        static inline double ft2m(double);
+        static inline double ft_min2m_s(int);
+        static inline int nm2m(double);
+        static inline int km2m(double);
     private:
 };
         

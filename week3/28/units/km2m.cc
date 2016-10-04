@@ -2,5 +2,5 @@
 
 int units::km2m(double km)
 {
-  return km * 1000;
+  return round(km * 1000);
 }
