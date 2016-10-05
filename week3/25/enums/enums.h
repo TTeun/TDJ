@@ -4,33 +4,31 @@
 
 // The enums!
 
-namespace RAM {
-	enum RAM
-	{
-		SIZE = 20
-	};
-}
+enum RAM
+{
+    SIZE = 20
+};
 
 enum Opcode
 {
-	ERR,
-	MOV,
-	ADD,
-	SUB,
-	MUL,
-	DIV,
-	NEG,
-	DSP,
-	STOP
+    ERR,
+    MOV,
+    ADD,
+    SUB,
+    MUL,
+    DIV,
+    NEG,
+    DSP,
+    STOP
 };
 
 
 enum OperandType
 {
-	SYNTAX,
-	VALUE,
-	REGISTER,
-	MEMORY
+    SYNTAX,
+    VALUE,
+    REGISTER,
+    MEMORY
 };
 
 #endif

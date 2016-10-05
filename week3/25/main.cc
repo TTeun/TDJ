@@ -8,5 +8,5 @@ int main() {
 	CPU cpu_obj(&mem_obj);
 	cpu_obj.start();
 
-	return 0;
+	return EXIT_SUCCESS;
 }
