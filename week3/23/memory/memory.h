@@ -9,12 +9,12 @@ private:
 
 public:
 	Memory();
-	Memory(int);
+	Memory(int size);
 	~Memory();
 
-	void store(int, int);
-	int load(int);
+	void store(int idx, int value);
+	int load(int idx);
 
 private:
-	bool inRange(int);
+	bool inRange(int idx);
 };

@@ -8,22 +8,17 @@ public:
 	void reset() {};
 };
 
-typedef struct Operand {
-	OperandType type;
-	int value;
-} Operand;
-
 class CPU
 {
 private:
-	Memory *d_memory;
-	Tokenizer d_tokenizer;
-	int * const d_registers;
 	int NREGISTERS = 5;
+    int * const d_registers;
+    Memory *d_memory;
+    Tokenizer d_tokenizer;
 
 public:
-	CPU(Memory *);
-	CPU(Memory *, int);
+	CPU(Memory * memory);
+	CPU(Memory * memory, int requiredRGSTR);
 	~CPU();
 
 	void start();
