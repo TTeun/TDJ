@@ -1,0 +1,33 @@
+void strcpy(char *dst, char const *src)
+{
+   while((*dst++ = *src++))
+      ;
+}
+
+
+
+1. *src is assigned to *dst.
+
+2. The value of this expression is *dst, which is 0 (false) at the ascii-Z byte, thus terminating the while-statement when the final '\0' is copied.
+
+3. As a side-effect, the postfix increments will point to the next character position after each assignment.
+
+
+
+void strcpy(char dst[0], char const src[0])
+{
+   while((dst[0]++ = src[0]++))
+      ;
+}
+
+1. src[idx] is assigned to dst[idx] for some idx starting at 0.
+
+2. The value of this expression is dst[0], which is 0 (false) at the ascii-Z byte, thus terminating the while-statement when the final '\0' is copied.
+
+3. As a side-effect, the postfix increments will point to the next character position after each assignment.
+
+
+
+The reason that the pointer-implementation is prefered is because there the changed are directly performed and 'saved' at the locations that is being pointed to. 
+In the implementation without pointers the changes are done, but after the while-loop has ended everything will be deleted, and the changes will be gone.
+
