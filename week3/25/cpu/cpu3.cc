@@ -2,5 +2,5 @@
 
 CPU::~CPU()
 {
-	free(d_registers);
+	delete [] d_registers;
 }
