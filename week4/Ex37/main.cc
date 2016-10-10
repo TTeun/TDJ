@@ -10,4 +10,11 @@ int main()
     int (*row)[10] = &square[0];
 
     inv_identity(row);
+
+    for (size_t row = 0; row != 10; ++row) {
+        for (size_t col = 0; col != 10; ++col)
+            cout << square[row][col] << ' ';
+        cout << '\n';
+    }
+
 }
