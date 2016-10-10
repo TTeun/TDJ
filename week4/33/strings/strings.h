@@ -6,18 +6,14 @@
 class Strings
 {
 private:
-    std::string * const d_str;
+    std::string * d_str;
     size_t d_size;
-    size_t * const startIndex;
-
 
 public:
     Strings(int argc, char ** argv);
-    size_t size() const;
     std::string const &at(size_t idx) const;
-
-private:
-    static size_t ntbsSize(char * ntbs);
+    std::string &at(size_t idx);
+    size_t size() const;
 };
 
 

@@ -6,8 +6,9 @@
 using namespace std;
 
 int main(int argc, char **argv, char ** environ) {
-    Strings object(argc, argv);
+    Strings const object(argc, argv);
+    string str = object.at(1);
+    str[0] = 's';
 
-
-    string const *str = object.at(object.size()-1);
+    cout << object.at(1) << endl;
 }
