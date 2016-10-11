@@ -1,0 +1,5 @@
+functies die niks veranderen moeten const. const oet achter wat const is.
+geen one-letter variables
+dingen die niet negatief zijn size_t
+superfluous brackets weghalen
+indentation
