@@ -5,15 +5,13 @@
 
 using namespace std;
 
+extern char **environ;
+
 int main(int argc, char **argv, char ** environ) {
-    Strings object(argc, argv);
+    //Strings object(argc, argv);
+	Strings object(environ);
 
-    cout << object.at(0) << endl;
-	char next[] = "Hallo Dani";
-	
-	object.append(&next[0]);
-	
-    cout << object.at(1) << endl;
-
+	for (size_t i = 0; i < object.size(); ++i)
+		cout << object.at(i) << '\n';
 
 }

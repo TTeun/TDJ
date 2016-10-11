@@ -11,6 +11,7 @@ private:
 
 public:
     Strings(int argc, char ** argv);
+    Strings(char **environ);
     std::string const &at(size_t idx) const;
     std::string &at(size_t idx);
     void append(char * ntbs);
