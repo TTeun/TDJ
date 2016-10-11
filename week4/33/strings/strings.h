@@ -6,8 +6,8 @@
 class Strings
 {
 private:
-    std::string * d_str;
     size_t d_size;
+    std::string * d_str;
 
 public:
     Strings(int argc, char ** argv);
@@ -16,6 +16,9 @@ public:
     std::string &at(size_t idx);
     void append(char * ntbs);
     size_t size() const;
+
+private:
+    size_t envSize(char ** environ);
 };
 
 #endif
