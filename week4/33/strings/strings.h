@@ -13,10 +13,8 @@ public:
     Strings(int argc, char ** argv);
     std::string const &at(size_t idx) const;
     std::string &at(size_t idx);
+    void append(char * ntbs);
     size_t size() const;
 };
-
-
-
 
 #endif
