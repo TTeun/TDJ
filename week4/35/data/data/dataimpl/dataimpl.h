@@ -5,7 +5,7 @@
 
 class DataImpl {
     int d_value = 0;
-    std::string d_text;
+    // std::string d_text;
 
 public:
     bool read();

@@ -2,5 +2,5 @@
 
 bool Data::read()
 {
-    pimpl->read();
+    return pimpl->read();
 }
