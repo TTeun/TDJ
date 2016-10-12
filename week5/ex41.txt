@@ -1,0 +1,54 @@
+----------------------------------------------------------------
+new and delete:
+
+int *ip = new int;
+delete ip;
+
+Allocates an int, returning its address.
+Then it deletes ip.
+----------------------------------------------------------------
+new[] and delete[]:
+
+int *ip2 = new int[5];
+delete[] ip2;
+
+Allocates 5 ints, returning the address of the first int.
+Then it delets ip2. 
+Because of the square brackets it knows that it has to delete 5 ints.
+----------------------------------------------------------------
+placement new:
+
+void demo()
+{
+    char block[25 * sizeof(std::string)]
+
+    string *sp = new(block + 5 * sizeof(std::string))
+						  std::string("in block");
+
+    sp->~string();
+};
+
+New installs a string in the 6th string location.
+Then the destructor is called.
+delete[] cannot be used here because the memory was not dynamically allocated.
+----------------------------------------------------------------
+operator new:
+
+int main()
+{
+    string *block = static_cast<string *>(
+						 operator new(25 * sizeof(std::string)));
+
+
+    string *sp = new(block + 5) std::string("in block");
+
+    sp->~string();
+
+    operator delete(block);
+};
+
+The memory represents strings, and block is a string *.
+New installs a string in the 6th string location.
+Then the string's destructor is called.
+Operator delete merely deallocates allocated memory.
+----------------------------------------------------------------
