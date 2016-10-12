@@ -19,6 +19,7 @@ public:
 
 private:
     size_t envSize(char ** environ);
+    void getInput(char **inp);
 };
 
 #endif
