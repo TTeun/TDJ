@@ -2,7 +2,8 @@
 
 size_t Strings::envSize(char ** environ) {
     size_t size = 0;
-    while (environ[size++]);
+    while (environ[size++])
+    	;
 
     return size - 1;
 }

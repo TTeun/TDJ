@@ -16,5 +16,4 @@ int main()
             cout << square[row][col] << ' ';
         cout << '\n';
     }
-
 }
