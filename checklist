@@ -3,3 +3,4 @@ geen one-letter variables
 dingen die niet negatief zijn size_t
 superfluous brackets weghalen
 indentation
+DRY: geen herhaalde code, in het bijzonder in constructors

@@ -1,14 +1,20 @@
 #include <iostream>
+#include <string>
 
+using namespace std;
 
-void swap(int &a, int &b){
-	
+void swap(string &num1, string &num2) {
+
 }
 
-int main(){
 
-	int a = 1;
-	int b = 5;
+int main() {
 
-	swap(a,b);
+    string a = "een";
+    string b = "twee";
+    swap(&a, &b);
+
+    cout << a << b << '\n';
+
+    swap(a, b);
 }
