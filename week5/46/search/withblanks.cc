@@ -1,6 +1,6 @@
 #include "search.ih"
 
-void Search::withBlanks(std::string line, int lineCounter){
+void Search::withBlanks(std::string line, size_t lineCounter){
 	std::istringstream iss(line);
     string word;
 	while(iss >> word) {
