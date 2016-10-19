@@ -9,8 +9,5 @@ int main(int argc, char **argv)
 {
 	Search test(argc, argv);
 	test.run();
-	// texttexttext
-	// TexT
-	// text text
 }
 
