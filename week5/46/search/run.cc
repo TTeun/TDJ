@@ -2,7 +2,7 @@
 
 void Search::run()
 {
-	int lineCounter = 1;
+	size_t lineCounter = 1;
 	std::string line;
 	d_text = (this->*d_match)(d_text);
 	
