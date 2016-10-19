@@ -1,3 +1,3 @@
 #include "search.ih"
 
-void Search::noOp(int lineCounter){}
+void Search::noOp(size_t lineCounter){}
