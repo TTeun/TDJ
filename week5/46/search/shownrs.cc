@@ -1,5 +1,5 @@
 #include "search.ih"
 
-void Search::showNrs(int lineCounter){
+void Search::showNrs(size_t lineCounter){
 	cout << lineCounter << ". ";
 }
