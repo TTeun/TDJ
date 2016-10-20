@@ -2,10 +2,7 @@
 
 int main(int argc, char ** argv) {
     if (argc < 3) {
-        cout << "Use as: \n" <<
-             "./a.out outFile inFile -b" << '\n' <<
-             "where the -b flag is optional" <<
-             '\n';
+        usage();
         return -1;
     }
 

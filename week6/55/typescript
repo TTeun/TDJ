@@ -140,4 +140,158 @@ Conversion complete!
 ]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[13Pg++ *.cc./a.out data human -b[13Pg++ *.ccxxd -b data 
 00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
 00000006: 00000000 00000000 00000000 11111100                    ....
-]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data 
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data human -b[13Pg++ *.cc
+^[[A^[[A^[[A]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.ccxxd -b data ./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[13Pg++ *.ccxxd -b data 
+00000000: 01100010 00000101 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111110 10000000           .....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data human -b[K[K[K[K[K[K[K[K[K[K[K[K[Khumdan da[K[K[K[K[K[Kan data
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data[6Pxxd -b data ./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[3Phuman data[6Pxxd -b data ./a.out data human -b[9Pxxd -b data 
+00000000: 01100010 00000101 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111110 10000000           .....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m git add . A
+fatal: pathspec 'A' did not match any files
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m git add . A[K-A
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m git [K commit -m "verbeteringen aan 55"
+[master 247f7b7] verbeteringen aan 55
+ 17 files changed, 280 insertions(+), 85 deletions(-)
+ rewrite week6/55/a.out (83%)
+ rewrite week6/55/bintohuman.cc (61%)
+ create mode 100644 week6/55/convert.cc
+ delete mode 100644 week6/55/correctquery.cc
+ create mode 100644 week6/55/getbinarysize.cc
+ create mode 100644 week6/55/isbinfile.cc
+ create mode 100644 week6/55/setbinaryheader.cc
+ create mode 100644 week6/55/setbinarysize.cc
+ create mode 100644 week6/55/streamsok.cc
+ create mode 100644 week6/55/typescript
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m git push origin master 
+Counting objects: 20, done.
+Delta compression using up to 8 threads.
+Compressing objects:   5% (1/18)   Compressing objects:  11% (2/18)   Compressing objects:  16% (3/18)   Compressing objects:  22% (4/18)   Compressing objects:  27% (5/18)   Compressing objects:  33% (6/18)   Compressing objects:  38% (7/18)   Compressing objects:  44% (8/18)   Compressing objects:  50% (9/18)   Compressing objects:  55% (10/18)   Compressing objects:  61% (11/18)   Compressing objects:  66% (12/18)   Compressing objects:  72% (13/18)   Compressing objects:  77% (14/18)   Compressing objects:  83% (15/18)   Compressing objects:  88% (16/18)   Compressing objects:  94% (17/18)   Compressing objects: 100% (18/18)   Compressing objects: 100% (18/18), done.
+Writing objects:   5% (1/20)   Writing objects:  10% (2/20)   Writing objects:  15% (3/20)   Writing objects:  20% (4/20)   Writing objects:  25% (5/20)   Writing objects:  30% (6/20)   Writing objects:  35% (7/20)   Writing objects:  40% (8/20)   Writing objects:  45% (9/20)   Writing objects:  50% (10/20)   Writing objects:  55% (11/20)   Writing objects:  60% (12/20)   Writing objects:  65% (13/20)   Writing objects:  70% (14/20)   Writing objects:  75% (15/20)   Writing objects:  80% (16/20)   Writing objects:  85% (17/20)   Writing objects:  90% (18/20)   Writing objects:  95% (19/20)   W20)   Writing objects:  10% (2/20)   Writing objects:  15% (3/20)   Writing objects:  20% (4/20)   Writing objects:  25% (5/20)   Writing objects:  30% (6/20)   Writing objects:  35% (7/20)   Writing objects:  40% (8/20)   Writing objects:  45% (9/20)   Writing objects:  50% (10/20)   Writing objects:  55% (11/20)   Writing objects:  60% (12/20)   Writing objects:  65% (13/20)   Writing objects:  70% (14/20)   Writing objects:  75% (15/20)   Writing objects:  80% (16/20)   Writing objects:  85% (17/20)   Writing objects:  90% (18/20)   Writing objects:  95% (19/20)   Writing objects: 100% (20/20)   Writing objects: 100% (20/20), 8.43 KiB | 0 bytes/s, done.
+Total 20 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/6)   [Kremote: Resolving deltas:  16% (1/6)   [Kremote: Resolving deltas:  33% (2/6)   [Kremote: Resolving deltas:  50% (3/6)   [Kremote: Resolving deltas:  66% (4/6)   [Kremote: Resolving deltas:  83% (5/6)   [Kremote: Resolving deltas: 100% (6/6)   [Kremote: Resolving deltas: 100% (6/6), completed with 6 local objects.[K
+To git@github.com:TTeun/TDJ.git
+   c6b56ad..247f7b7  master -> master
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m git push origin master commit -m "verbeteringen aan 55"add . -A[K[1PAxxd -b data ./a.out data human -b[3Phuman data[6Pxxd -b data ./a.out data human -b[13Pg++ *.cc
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc[K./a.out data j[Khuman -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data 
+00000000: 01100010 00000101 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111110 10000000           .....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data [K[K[K[K[K[K[K[K[K[K[K[K./a.out human data 
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data [7Pxxd -b[C[C[C[C[C[C./a.out data human -b
+Converting to binary...
+Failed: Input contains letter other than 'A', 'T', 'C' or 'G'
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m sizeof(data)
+bash: syntax error near unexpected token `data'
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m sizeof(data)[K[K[K[K[K[K data
+sizeof: command not found
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m sizeof data(data)./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[10Psizeof data(data)./a.out data human -b[2Phuman data 
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -f [K[Kd binto[K[Kar[K[K[K[K[Kdata 
+Usage:
+       xxd [options] [infile [outfile]]
+    or
+       xxd -r [-s [-]offset] [-c cols] [-ps] [infile [outfile]]
+Options:
+    -a          toggle autoskip: A single '*' replaces nul-lines. Default off.
+    -b          binary digit dump (incompatible with -ps,-i,-r). Default hex.
+    -c cols     format <cols> octets per line. Default 16 (-i: 12, -ps: 30).
+    -E          show characters inrt at <seek> bytes abs. (or +: rel.) infile offset.
+    -u          use upper case hex letters.
+    -v          show version: "xxd V1.10 27oct98 by Juergen Weigert".
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -d data [1P[1P[1@-[1@b
+00000000: 01100010 10001000 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111110 10110000 10110110  ......
+0000000c: 00110110 01110010 01110111 11000100 10011000 01110011  6rw..s
+00000012: 01110111 01100001 00111100 01001001 00011100 01110001  wa<I.q
+00000018: 11000100 01000111 00011100 01111100 01000110 00011100  .G.|F.
+0000001e: 01110001 10010011 01110010 01000111 00011000 01110001  q.rG.q
+00000024: 11000110 00110001 11000110 00010100 11000110 01000011  .1...C
+0000002a: 01110100 00000000                                      t.
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data [K[K[K[K[Khuman
+00000000: 01000111 01000111 01000111 01010100 01010100 01000111  GGGTTG
+00000006: 01000001 01000001 01010100 01000111 01000011 01010100  AATGCT
+0000000c: 01000001 01000111 01000011 01010100 01000011 01000111  AGCTCG
+00000012: 01000001 01010100 01000011 01000111 01000011 01000111  ATCGCG
+00000018: 01000111 01000001 01000011 01000001 01010100 01000011  GACATC
+0000001e: 01010100 01000001 01000011 01000111 01000001 01000111  TACGAG
+00000024: 01000011 01000111 01000011 01000111 01000011 01010100  CGCGCT
+0000002a: 01000001 01000011 01000001 01000111 01000111 01000001  ACAGGA
+00000030: 01000011 01000001 01010100 01000011 01000001 01000011  CATCAC
+00000036: 01000111 01000001 01000011 01000111 01000001 01000011  GACGAC
+0000003c: 01000111 01000001 01000011 01000001 01000011 01000001  GACACA
+00000042: 01000011 01000111 01000001 01000011 01000111 01000001  CGACGA
+00000048: 01000011 01000111 01000111 01000001 01000011 01000001  CGGACA
+0000004e: 01000011 01010100 01000001 01000011 01000111 01000001  CTACGA
+00000054: 01000011 01000111 01000001 01000011 01010100 01000011  CGACTC
+0000005a: 01000001 01000111 01000011 01000111 01000001 01010100  AGCGAT
+00000060: 01000011 01000001 01000011 01000111 01000001 01000011  CACGAC
+00000066: 01010100 01000001 01000011 01000111 01000001 01000011  TACGAC
+0000006c: 01000111 01000001 01000011 01010100 01000001 01000111  GACTAG
+00000072: 01000001 01000011 01000111 01000001 01000011 01010100  ACGACT
+00000078: 01000001 01000011 01000011 01000001 01000111 01000001  ACCAGA
+0000007e: 01000011 01010100 01000011 01000001 01000001 01000111  CTCAAG
+00000084: 01000011 01000111 01000011 01000001                    CGCA
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[Cdata human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[C
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[C[7Pxxd -d[C[C[C[C[C[Cb[C[C[C[C[C[Chuman./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[2Phuman data data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[C
+Converting to huma[01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[Cdata human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[C
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[C[7Pxxd -d[C[C[C[C[C[Cb[C[C[C[C[C[Chuman./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[2Phuman data data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[C
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[2Phuman data 
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[2Phuman data 
+Converting to human-readable...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out human data data human -b
+Converting to binary...
+Failed: Input file is empty
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b binto[K[K[K[K[Kdata 
+00000000: 01100010 00000000 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 00000000                    ....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data human -b[2Phuman data data human -b[2Phuman data data human -b[2Phuman data data human -b[2Phuman data data human -b[9Pxxd -b humandata d[C[C[C[C[C[C[7@./a.out human[C[C[C[C[C[Cdata human -b[10Psizeof data./a.out data human -b[2Phuman data [7Pxxd -d[C[C[C[C[C[Cb[C[C[C[C[C[Chuman./a.out data human -b[2Phuman data data human -b[2Phuman data data human -b[2Phuman data data human -b[2Phuman data data human -b[9Pxxd -b data [Kg++ *.cc
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m icmbuild start
+Fatal: cannot open #include file `icmconf'
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m icb[K,[Kmbuild 
+Fatal: cannot open #include file `icmconf'
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[

@@ -11,3 +11,4 @@ void setBinarySize(ofstream &oStrm, size_t size);
 bool isBinFile(ifstream &iStrm);
 void setBinaryHeader(ofstream &oStrm);
 void convert(ofstream &oStrm, ifstream &iStrm, State (*converter)(ofstream&, ifstream&));
+void usage();

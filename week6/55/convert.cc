@@ -18,6 +18,6 @@ void convert(ofstream &oStrm, ifstream &iStrm, State (*converter)(ofstream&, ifs
              "'A', 'T', 'C' or 'G'" << '\n';
         break;
     default:
-        cout << "To binary failed" << '\n';
+        cout << "Conversion failed" << '\n';
     }
 }
