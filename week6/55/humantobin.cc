@@ -2,39 +2,39 @@
 
 State humanToBin(ofstream &oStrm, ifstream &iStrm)
 {
-    char tmp = 'b';
-    oStrm.write(&tmp, sizeof(char));
+    cout << "Converting to binary..." << '\n';
+    setBinaryHeader(oStrm);
 
     size_t sizeOfSeq = 0;
-    oStrm.write(reinterpret_cast<char*>(&sizeOfSeq), sizeof(size_t));
-
     size_t counter = 0;
+
     char *memblock = new char;
-    State state = OK;
-    tmp = 0;
+    char tmp = 0;
     while (iStrm.read(memblock, sizeof(char)))
     {
         if (not correctInput(*memblock))
-            return WRONGINPUT;
+            return WRONGLETTER;
 
         tmp <<= 2;
         tmp += charToBin(*memblock);
-        counter++;
-        if (counter == 4) {
+
+        ++counter;
+        ++sizeOfSeq;
+        if (counter == 4) // one write for each for chars obtained
+        {
             oStrm.write(&tmp, sizeof(char));
             counter = 0;
             tmp = 0;
         }
-        ++sizeOfSeq;
     }
-    if (counter != 0) {
-        tmp <<= (2 * (4 - counter));
-        oStrm.write(&tmp, sizeof(char));
-    }
+    while (counter++ != 4)
+        tmp <<= 2;
 
-    oStrm.clear();
-    oStrm.seekp(1, ios::beg);
-    oStrm.write(reinterpret_cast<char*>(&sizeOfSeq), sizeof(size_t));
+    oStrm.write(&tmp, sizeof(char));
 
-    return state;
+    if (sizeOfSeq == 0)
+        return EMPTYFILE;
+
+    setBinarySize(oStrm, sizeOfSeq);
+    return OK;
 }

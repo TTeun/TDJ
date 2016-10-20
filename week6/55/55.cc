@@ -12,23 +12,17 @@ int main(int argc, char ** argv) {
     char const *oPath = argv[1];
     char const *iPath = argv[2];
 
-
     ofstream oStrm(oPath, ios::binary | ios::out | ios::trunc);
     ifstream iStrm(iPath, ios::binary | ios::in);
     Mode mode = argc == 4 ? TOBINARY : TOHUMAN;
 
-    if (not isCorrectQuery(oStrm, iStrm, mode))
+    if (not streamsOk(oStrm, iStrm, mode))
         return -1;
 
-    if (mode == TOHUMAN)
-        cout << (binToHuman(oStrm, iStrm) == OK ?
-                 "To human-readable success!" : "To human"
-                 " conversion failed") << '\n';
+    State (*fp)(ofstream&, ifstream&) =
+        mode == TOHUMAN ? binToHuman : humanToBin;
 
-    if (mode == TOBINARY)
-        cout << (humanToBin(oStrm, iStrm) == OK ?
-                 "To binary success!" : "To binary conversion"
-                 " failed: Wrong charachter encountered") << '\n';
+    convert(oStrm, iStrm, fp);
 
     oStrm.close();
     iStrm.close();

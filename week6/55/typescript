@@ -1,0 +1,143 @@
+Script started on Thu 20 Oct 2016 05:41:02 PM CEST
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ls
+55.cc          convert.cc        human          script
+[0m[01;32ma.out[0m          correctinput.cc   humantobin.cc  setbinaryheader.cc
+bintochar.cc   data              isbinfile.cc   setbinarysize.cc
+bintohuman.cc  enums.h           main.h         streamsok.cc
+chartobin.cc   getbinarysize.cc  main.ih        typescript
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m rm script 
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ls
+55.cc          convert.cc        human          setbinaryheader.cc
+[0m[01;32ma.out[0m          correctinput.cc   humantobin.cc  setbinarysize.cc
+bintochar.cc   data              isbinfile.cc   streamsok.cc
+bintohuman.cc  enums.h           main.h         typescript
+chartobin.cc   getbinarysize.cc  main.ih
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m lsrm script ls[Krm script ls[K[Kg++ *.cc
+[01m[Khumantobin.cc:[m[K In function ‘[01m[KState humanToBin(std::ofstream&, std::ifstream&)[m[K’:
+[01m[Khumantobin.cc:14:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kstate[m[K’ was not declared in this scope
+             && state == OK)
+[01;32m[K                ^[m[K
+[01m[Ktobin.cc:[m[K In function ‘[01m[Kvoid toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:7:16:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [-fpermissive]
+         return WRONGLETTER;
+[01;32m[K                ^[m[K
+[01m[Ktobin.cc:11:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kcounter[m[K’ was not declared in this scope
+     ++counter;
+[01;32m[K       ^[m[K
+[01m[Ktobin.cc:12:7:[m[K [01;31m[Kerror: [m[K‘[01m[KsizeOfSeq[m[K’ was not declared in this scope
+     ++sizeOfSeq;
+[01;32m[K       ^[m[K
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Ktobin.cc:[m[K In function ‘[01m[Kvoid toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:7:16:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [-fpermissive]
+         return WRONGLETTER;
+[01;32m[K                ^[m[K
+[01m[Ktobin.cc:11:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kcounter[m[K’ was not declared in this scope
+     ++counter;
+[01;32m[K       ^[m[K
+[01m[Ktobin.cc:12:7:[m[K [01;31m[Kerror: [m[K‘[01m[KsizeOfSeq[m[K’ was not declared in this scope
+     ++sizeOfSeq;
+[01;32m[K       ^[m[K
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Ktobin.cc:[m[K In function ‘[01m[Kvoid toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:8:16:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning 'void' [-fpermissive]
+         return WRONGLETTER;
+[01;32m[K                ^[m[K
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Khumantobin.cc:[m[K In function ‘[01m[KState humanToBin(std::ofstream&, std::ifstream&)[m[K’:
+[01m[Khumantobin.cc:17:15:[m[K [01;31m[Kerror: [m[Kvoid value not ignored as it ought to be
+         state = toBin(iStrm, memblock);
+[01;32m[K               ^[m[K
+[01m[Ktobin.cc:[m[K In function ‘[01m[KState toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:3:43:[m[K [01;31m[Kerror: [m[Kambiguating new declaration of ‘[01m[KState toBin(std::ifstream&, char*)[m[K’
+ State toBin(ifstream &iStr, char *memblock)
+[01;32m[K                                           ^[m[K
+In file included from [01m[Kmain.ih:4:0[m[K,
+                 from [01m[Ktobin.cc:1[m[K:
+[01m[Kmain.h:14:6:[m[K [01;36m[Knote: [m[Kold declaration ‘[01m[Kvoid toBin(std::ifstream&, char*)[m[K’
+ void toBin(ifstream &iStr, char *memblock);
+[01;32m[K      ^[m[K
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Ktobin.cc:[m[K In function ‘[01m[KState toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Khumantobin.cc:[m[K In function ‘[01m[KState humanToBin(std::ofstream&, std::ifstream&)[m[K’:
+[01m[Khumantobin.cc:17:38:[m[K [01;31m[Kerror: [m[Kinvalid initialization of reference of type ‘[01m[Kstd::ofstream& {aka std::basic_ofstream<char>&}[m[K’ from expression of type ‘[01m[Kstd::ifstream {aka std::basic_ifstream<char>}[m[K’
+         state = toBin(iStrm, memblock);
+[01;32m[K                                      ^[m[K
+In file included from [01m[Kmain.ih:4:0[m[K,
+                 from [01m[Khumantobin.cc:1[m[K:
+[01m[Kmain.h:14:7:[m[K [01;36m[Knote: [m[Kin passing argument 1 of ‘[01m[KState toBin(std::ofstream&, char*)[m[K’
+ State toBin(ofstream &oStr, char *memblock);
+[01;32m[K       ^[m[K
+[01m[Ktobin.cc:[m[K In function ‘[01m[KState toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Ktobin.cc:[m[K In function ‘[01m[KState toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:15:9:[m[K [01;31m[Kerror: [m[K‘[01m[KoStrm[m[K’ was not declared in this scope
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K         ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+[01m[Ktobin.cc:[m[K In function ‘[01m[KState toBin(std::ifstream&, char*)[m[K’:
+[01m[Ktobin.cc:15:15:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::ifstream {aka class std::basic_ifstream<char>}[m[K’ has no member named ‘[01m[Kwrite[m[K’
+         oStrm.write(&tmp, sizeof(char));
+[01;32m[K               ^[m[K
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.ccls[Krm script ls[Kgit push origin master ls[Krm script ls[Kg++ *.cc[Kxxd -b data 
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111100                    ....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[9Pxxd -b data 
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000                             ...
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data 
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000                             ...
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data human -b[9Pxxd -b data [4Pg++ *.cc
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.ccxxd -b data 
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000                             ...
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data [4Pg++ *.ccxxd -b data ./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[9Pxxd -b data 
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111100                    ....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data [Ksubl 
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m subl [7@xxd -b data[C./a.out data human -b[9Pxxd -b data [4Pg++ *.cc
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc[3Psubl [7@xxd -b data[C./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[13Pg++ *.cc[3Psubl [7@xxd -b data[C
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11000000                    ....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data human -b[13Pg++ *.cc
+^[[A^[[A]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.ccxxd -b data ./a.out data human -b
+Converting to binary...
+^[[A^[[A^[[A^C
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[13Pg++ *.ccxxd -b data [4Pg++ *.cc
+^[[A^[[A]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m g++ *.cc./a.out data human -b
+Converting to binary...
+Conversion complete!
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m ./a.out data human -b[13Pg++ *.cc./a.out data human -b[13Pg++ *.ccxxd -b data 
+00000000: 01100010 00000011 00000000 00000000 00000000 00000000  b.....
+00000006: 00000000 00000000 00000000 11111100                    ....
+]0;teun@teunPC ~/Documents/C++/TDJ/week6/55[01;32mteun@teunPC[00m [01;34m~/Documents/C++/TDJ/week6/55 $[00m xxd -b data ./a.out data 

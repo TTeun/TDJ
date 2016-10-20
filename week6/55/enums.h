@@ -7,5 +7,7 @@ enum Mode
 enum State
 {
     OK,
-    WRONGINPUT
+    NOTBINARY,
+    EMPTYFILE,
+    WRONGLETTER
 };
