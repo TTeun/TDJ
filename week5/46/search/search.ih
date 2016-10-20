@@ -1,5 +1,5 @@
 #include "search.h"
-#include<iostream>
+#include <iostream>
 #include <getopt.h>
 #include <stdlib.h>
 

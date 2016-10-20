@@ -9,6 +9,7 @@ class Data
 
 public:
     Data();
+    ~Data();
     bool read();
     void display() const;
 };
