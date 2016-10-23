@@ -14,10 +14,11 @@ enum Mode
 };
 
 int main() {
-    char *memblock = new char[sizeof(acct_v3)];
     ifstream iStrm("/var/log/account/pacct", ios::in | ios::binary);
-    string error;
+    
     Mode mode = DEFAULT;
+    char *memblock = new char[sizeof(acct_v3)];
+    string error;
     while (iStrm.read(memblock, sizeof(acct_v3))) {
         acct_v3 *info = reinterpret_cast<acct_v3 *>(memblock);
         if (mode == ALL ||
