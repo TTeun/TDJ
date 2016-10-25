@@ -19,6 +19,7 @@ class Strings
         ~Strings();
 		void swap(Strings &other);
 		Strings(Strings &&tmp);
+		Strings &operator=(Strings &&other);
 
         size_t size() const;
         size_t capacity() const;
