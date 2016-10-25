@@ -20,7 +20,7 @@ State humanToBin(ofstream &oStrm, ifstream &iStrm)
 
         ++counter;
         ++sizeOfSeq;
-        if (counter == 4) // one write for each for chars obtained
+        if (counter == 4) // one write for each four chars obtained
         {
             oStrm.write(&tmp, sizeof(char));
             counter = 0;
