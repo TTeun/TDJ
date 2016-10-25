@@ -1,0 +1,8 @@
+The default copy constructor would only copy the values of the class members. However, when there are pointers, it is often desirable to also copy the objects that the pointers are pointing to. But this is not copied by the default copy constructor. Therefore there was no default specified for the copy constructor.
+There are cases where a default copy constructor would make sense. This would for example be when there are no pointers inside a class like in the following class.
+
+class A{
+    int a;
+};
+
+Here the default copy constructor would just copy that a is an int, and that is also all there is. S o the default copy constructor could be used here. 
