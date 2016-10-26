@@ -51,5 +51,5 @@ int main(int argc, char **argv)
                  error << '\n';
         }
     }
-    delete memblock;
+    delete[] memblock;
 }
