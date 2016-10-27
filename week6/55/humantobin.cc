@@ -14,7 +14,7 @@ State humanToBin(ofstream &oStrm, ifstream &iStrm)
     {
         if (not correctInput(*memblock))
             return WRONGLETTER;
-
+        
         tmp <<= 2;
         tmp += charToBin(*memblock);
 

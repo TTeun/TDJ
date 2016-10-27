@@ -16,8 +16,8 @@ public:
     Matrix(std::size_t rows, std::size_t cols);
     ~Matrix();
     Matrix(std::initializer_list<std::initializer_list<double>> iList);
-    size_t nRows();
-    size_t nCols();
+    size_t nRows() const;
+    size_t nCols() const;
     double *row(size_t idx);
     double *row(size_t idx) const;
 

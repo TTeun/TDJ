@@ -11,7 +11,7 @@ int main(int argc, char ** argv) {
 
     ofstream oStrm(oPath, ios::binary | ios::out | ios::trunc);
     ifstream iStrm(iPath, ios::binary | ios::in);
-    Mode mode = argc == 4 ? TOBINARY : TOHUMAN;
+    Mode mode = (argc == 4 && argv[3] == "-b") ? TOBINARY : TOHUMAN;
 
     if (not streamsOk(oStrm, iStrm, mode))
         return -1;
