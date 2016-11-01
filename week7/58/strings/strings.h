@@ -5,21 +5,25 @@
 
 class Strings
 {
-    size_t d_size = 0;          // initial size ( = #strings)
-    size_t d_capacity = 1;      // initial capacity (in raw memory)
-    std::string *d_str;         // pointer to the string objects.
+    size_t d_size = 0;
+    size_t d_capacity = 1;
+    std::string **d_str;            // now a double *
 
     public:
         Strings();
+
         Strings(int argc, char *argv[]);
         Strings(char **environLike);
 		
-		Strings &operator=(Strings const &rvalue);
 		Strings(Strings const &other);
-        ~Strings();
-		void swap(Strings &other);
 		Strings(Strings &&tmp);
+
+		Strings &operator=(Strings const &rvalue);
 		Strings &operator=(Strings &&other);
+		
+        ~Strings();
+		
+		void swap(Strings &other);
 
         size_t size() const;
         size_t capacity() const;
@@ -33,10 +37,10 @@ class Strings
         
     private:
         std::string &safeAt(size_t idx) const;      // private backdoor
-        std::string *storageArea();                 // to store the next str.
+        std::string **storageArea();                // to store the next str.
         void destroy();                 
-        std::string *enlarged();                    // to d_capacity
-        std::string *rawStrings(size_t nStrings);
+        std::string **enlarged();                   // to d_capacity
+        std::string **rawPointers(size_t nPointers);
 };
 
 inline size_t Strings::size() const         // potentially dangerous practice:

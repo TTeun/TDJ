@@ -53,7 +53,7 @@
 
     // Uncomment to clear the screen just before starting the compilation
     // process 
-#define CLS
+//#define CLS
 
     // Uncomment to use the ALL facility and a class dependency setup in the
     // CLASSES file. When a directory contains a file ALL (optionally rename

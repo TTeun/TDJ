@@ -6,5 +6,5 @@ std::string &Strings::safeAt(size_t idx) const
 
     empty.clear();
 
-    return idx < d_size ? d_str[idx] : empty;
+    return idx < d_size ? *d_str[idx] : empty;
 }

@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-string *Strings::storageArea()
+string **Strings::storageArea()
 {
     if (d_size + 1 < d_capacity)        // enough room?
         return d_str;                   // return the current memory block

@@ -7,11 +7,11 @@ void Strings::resize(size_t newSize)
     if (d_size > newSize)       // enlarging? initialize new strings
     {
         for (; d_size != newSize; ++d_size)
-            new (d_str + d_size) string;        // placement new
+            d_str[d_size] = new string;
     }
     else if (newSize < d_size)  // shrinking? remove excess strings
     {
         for (; d_size-- != newSize; )
-            d_str[d_size].~string();
+            delete d_str[d_size];
     }
 }

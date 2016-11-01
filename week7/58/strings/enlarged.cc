@@ -1,14 +1,13 @@
 #include "strings.ih"
 
-string *Strings::enlarged()
+string **Strings::enlarged()
 {
-                                        // new block, for d_capacity strings
-    string *ret = rawStrings(d_capacity);
+                                        // new block, doubling the # pointers
+    string **ret = rawPointers(d_capacity);
 
-                                        // copy the existing strings to the
-                                        // new area, using placement new.
+                                        // copy the existing pointers
     for (size_t idx = 0; idx != d_size; ++idx)
-        new (&ret[idx]) string(d_str[idx]);
+        ret[idx] = d_str[idx];
 
     return ret;
 }

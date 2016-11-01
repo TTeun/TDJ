@@ -2,5 +2,5 @@
 
 Strings::Strings()
 :
-    d_str(rawStrings(1))
+    d_str(rawPointers(1))
 {}

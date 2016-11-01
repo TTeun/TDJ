@@ -2,9 +2,9 @@
 
 void Strings::add(string const &next)
 {
-    string *tmp = storageArea();    // enlarge if no more room for 'next'
+    string **tmp = storageArea();
 
-    new (&tmp[d_size]) string(next);
+    tmp[d_size] = new string(next);
 
     if (tmp != d_str)               // destroy old memory if new storageArea 
     {                               // was allocated
