@@ -7,7 +7,7 @@
 
 class Matrix {
 private:
-  double *d_data{};
+  double *d_data = nullptr;
   std::size_t d_nRows = 0;
   std::size_t d_nCols = 0;
 
@@ -30,6 +30,7 @@ public:
 private:
   void copy(Matrix const &other);
   double *safeRow(size_t idx) const;
+  void trCopy(double *dataPtr);
 };
 
 #endif
