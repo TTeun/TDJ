@@ -14,9 +14,9 @@ do
   do
     echo "$i"
     echo "\underline{$i}" >> documentation     ##
-    echo "\begin{verbatim}" >> documentation   ##
+    echo "\begin{lstlisting}" >> documentation   ##
     cat "$i" >> documentation
-    echo "\end{verbatim}" >> documentation     ##
+    echo "\end{lstlisting}" >> documentation     ##
     echo -e "\n" >> documentation              ##
   done
 done
