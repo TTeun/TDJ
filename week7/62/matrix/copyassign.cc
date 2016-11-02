@@ -1,7 +1,7 @@
 #include "matrix.h"
 
 Matrix &Matrix::operator=(const Matrix &rvalue) {
-  if (d_data != rvalue.row(0)) {
+  if (this != &rvalue) {
     delete[] d_data;
     d_nCols = rvalue.nCols();
     d_nRows = rvalue.nRows();

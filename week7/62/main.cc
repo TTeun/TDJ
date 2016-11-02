@@ -7,9 +7,7 @@ void toIdentity(Matrix *mat) { *mat = Matrix::identity(mat->nCols()); }
 
 int main() {
   Matrix kasa;
-  Matrix mat({{1.0, 2.0, 3.0},
-              {10.0, 20.0, 30.0},
-              {100.0, 200.0, 300.0}});
+  Matrix mat({{1.0, 2.0, 3.0}, {10.0, 20.0, 30.0}, {100.0, 200.0, 300.0}});
 
   for (size_t row = 0; row < mat.nRows(); ++row) {
     for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
@@ -17,13 +15,17 @@ int main() {
     cout << '\n';
   }
 
-  double *row = mat.row(0);
-  cout << *row << endl;
-
-  // mat = Matrix::identity(15);
   cout << '\n';
   mat = mat.tr();
+
+  for (size_t row = 0; row < mat.nRows(); ++row) {
+    for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
+      cout << *el << ' ';
+    cout << '\n';
+  }
+
   cout << '\n';
+  mat = mat.identity(4);
 
   for (size_t row = 0; row < mat.nRows(); ++row) {
     for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
