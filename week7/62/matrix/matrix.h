@@ -12,7 +12,7 @@ private:
   std::size_t d_nCols = 0;
 
 public:
-  Matrix();
+  Matrix() = default;
   Matrix(std::size_t rows, std::size_t cols);
   Matrix(std::initializer_list<std::initializer_list<double>> iList);
   Matrix(Matrix const &other);
