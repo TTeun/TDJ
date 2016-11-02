@@ -2,8 +2,8 @@
 
 Strings::Strings(Strings &&tmp)
 :
+  d_size(tmp.d_size),
 	d_capacity(tmp.d_capacity),
-	d_size(tmp.d_size),
 	d_str(tmp.d_str)
 {
 	tmp.d_size = 0;
