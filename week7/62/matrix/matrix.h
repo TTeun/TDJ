@@ -3,6 +3,7 @@
 
 #include <cstdlib> // size_t
 #include <initializer_list>
+#include <iostream>
 
 class Matrix {
 private:
@@ -22,9 +23,13 @@ public:
   size_t nCols() const;
   double *row(size_t idx);
   double *row(size_t idx) const;
+  static Matrix identity(size_t dim);
+  Matrix &tr();
+  Matrix transpose();
 
 private:
   void copy(Matrix const &other);
+  double *safeRow(size_t idx) const;
 };
 
 #endif
