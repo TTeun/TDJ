@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -f create_documentation ]; then
+ rm documentation
+fi
+
 touch documentation
 
 echo -e "Including the following files:\n"
