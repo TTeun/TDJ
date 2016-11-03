@@ -3,9 +3,15 @@
 
 using namespace std;
 
+extern char **environ;
+
 int main(int argc, char **argv) {
-  Strings object(argc, argv);
-  for (size_t idx = 1; idx != object.size(); ++idx)
-    cout << object.at(idx) << ' ';
-  cout << '\n';
+  Strings args(argc, argv);
+  Strings env(environ);
+
+  cout << args[0] << '\n';
+
+  args[1] = args[2] = args[0];
+
+  cout << args[1] << '\n';
 }
