@@ -1,0 +1,292 @@
+\underline{matrix/matrix.h}
+\begin{lstlisting}
+#ifndef INCLUDED_MATRIX_
+#define INCLUDED_MATRIX_
+
+#include <cstdlib> // size_t
+#include <initializer_list>
+#include <iostream>
+
+class Matrix {
+private:
+  double *d_data = nullptr;
+  std::size_t d_nRows = 0;
+  std::size_t d_nCols = 0;
+
+public:
+  Matrix() = default;
+  Matrix(std::size_t rows, std::size_t cols);
+  Matrix(std::initializer_list<std::initializer_list<double>> iList);
+  Matrix(Matrix const &other);
+  ~Matrix();
+
+  Matrix &operator=(Matrix const &rvalue);
+  size_t nRows() const;
+  size_t nCols() const;
+  double *row(size_t idx);
+  double *row(size_t idx) const;
+  static Matrix identity(size_t dim);
+  Matrix &tr();
+  Matrix transpose();
+
+private:
+  void copy(Matrix const &other);
+  double *safeRow(size_t idx) const;
+  void trCopy(double *dataPtr);
+};
+
+#endif
+\end{lstlisting}
+
+
+\underline{matrix/matrix.ih}
+\begin{lstlisting}
+#include "matrix.h"
+#include <cstring>
+#include <utility>
+#include <iostream>
+
+using namespace std;
+
+\end{lstlisting}
+
+
+\underline{main.cc}
+\begin{lstlisting}
+#include "matrix/matrix.h"
+#include <iostream>
+
+using namespace std;
+
+void toIdentity(Matrix *mat) { *mat = Matrix::identity(mat->nCols()); }
+
+int main() {
+  Matrix mat({{1.0, 2.0, 3.0},
+              {10.0, 20.0, 30.0},
+              {100.0, 200.0, 300.0},
+              {1000.0, 2000.0, 3000.0}});
+  //
+  //
+  // for (size_t row = 0; row < mat.nRows(); ++row) {
+  //   for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
+  //     cout << *el << ' ';
+  //   cout << '\n';
+  // }
+  //
+  // cout << '\n';
+  // mat = mat.transpose();
+  //
+  // for (size_t row = 0; row < mat.nRows(); ++row) {
+  //   for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
+  //     cout << *el << ' ';
+  //   cout << '\n';
+  // }
+  //
+  // // cout << '\n';
+  Matrix mat44 = Matrix::identity(3);
+
+  for (size_t row = 0; row < mat44.nRows(); ++row) {
+    for (double *el = mat44.row(row); el != mat44.row(row) + mat44.nCols();
+         ++el)
+      cout << *el << ' ';
+    cout << '\n';
+  }
+}
+\end{lstlisting}
+
+
+\underline{matrix/copyassign.cc}
+\begin{lstlisting}
+#include "matrix.h"
+
+Matrix &Matrix::operator=(const Matrix &rvalue) {
+  if (this != &rvalue) {
+    delete[] d_data;
+    d_nCols = rvalue.nCols();
+    d_nRows = rvalue.nRows();
+    d_data = new double[d_nCols * d_nRows];
+    copy(rvalue);
+  }
+  return *this;
+}
+\end{lstlisting}
+
+
+\underline{matrix/copy.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+void Matrix::copy(Matrix const &other) {
+  double *dataPtr = d_data;
+  double *rowStart = other.row(0);
+  for (size_t rowIt = 0; rowIt != d_nRows; ++rowIt) {
+    for (size_t colIt = 0; colIt != d_nCols; ++colIt)
+      *dataPtr++ = *rowStart++;
+  }
+}
+\end{lstlisting}
+
+
+\underline{matrix/destructor.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+Matrix::~Matrix(){
+    delete[] d_data;
+}
+\end{lstlisting}
+
+
+\underline{matrix/identity.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+Matrix Matrix::identity(size_t dim) {
+  Matrix iden(dim, dim);
+  double *dataPtr = iden.row(0);
+  for (size_t idx = 0; idx != dim; ++idx, dataPtr += dim + 1)
+    *dataPtr = 1;
+  return iden;
+}
+\end{lstlisting}
+
+
+\underline{matrix/matrix2.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+typedef initializer_list<double> const dbl_init_list;
+
+Matrix::Matrix(initializer_list<initializer_list<double>> iLists) {
+  d_nRows = iLists.size();
+  d_nCols = iLists.begin()->size();
+
+  d_data = new double[d_nCols * d_nRows];
+  double *dataPtr = d_data;
+
+  for (auto row : iLists)
+    if (row.size() == d_nCols) // row has right length
+      for (auto col : row)
+        *dataPtr++ = col;
+    else { // rows have different length
+      cout << "Rows in initializer lists have different sizes" << '\n';
+      exit(1);
+    }
+}
+\end{lstlisting}
+
+
+\underline{matrix/matrix3.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+Matrix::Matrix(Matrix const &other)
+    : d_nCols(other.nCols()),
+      d_nRows(other.nRows())
+{
+  d_data = new double[d_nCols * d_nRows];
+  copy(other);
+}
+\end{lstlisting}
+
+
+\underline{matrix/matrix4.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+Matrix::Matrix(size_t rows, size_t cols) {
+  d_nRows = rows;
+  d_nCols = cols;
+  d_data = new double[d_nRows * d_nCols];
+}
+\end{lstlisting}
+
+
+\underline{matrix/ncols.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+size_t Matrix::nCols() const{
+    return d_nCols;
+}
+\end{lstlisting}
+
+
+\underline{matrix/nrows.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+size_t Matrix::nRows() const {
+    return d_nRows;
+}
+\end{lstlisting}
+
+
+\underline{matrix/row.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+double *Matrix::row(size_t idx){
+    return safeRow(idx);
+}
+
+double *Matrix::row(size_t idx) const{
+    return safeRow(idx);
+}
+
+double *Matrix::safeRow(size_t idx) const{
+  static double *empty;
+  empty = nullptr;
+  return idx < d_nRows ? (d_data + idx * d_nCols) : empty;
+}
+\end{lstlisting}
+
+
+\underline{matrix/transpose.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+Matrix Matrix::transpose() {
+  Matrix trans(d_nCols, d_nRows);
+  double *dataPtr = trans.row(0);
+  trCopy(dataPtr);
+  return trans;
+}
+\end{lstlisting}
+
+
+\underline{matrix/tr.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+Matrix &Matrix::tr() {
+  if (d_nRows != d_nCols)
+    cout << "Cannot transpose a non-square matrix"
+            " using tr(). Use transpose() instead."
+         << '\n';
+  else {
+    double *newPtr = new double[d_nCols * d_nRows];
+    double *dataPtr = newPtr;
+    trCopy(dataPtr);
+
+    double *tempPtr = d_data;
+    d_data = newPtr;
+    delete[] tempPtr;
+  }
+  return *this;
+}
+\end{lstlisting}
+
+
+\underline{matrix/trcopy.cc}
+\begin{lstlisting}
+#include "matrix.ih"
+
+void Matrix::trCopy(double *dataPtr) {
+  for (size_t col = 0; col != d_nCols; ++col)
+    for (size_t row = 0; row != d_nRows; ++row)
+      *dataPtr++ = *(d_data + row * d_nCols + col);
+}
+\end{lstlisting}
+
+
