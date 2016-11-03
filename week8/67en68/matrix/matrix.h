@@ -31,6 +31,12 @@ public:
   // ===========
   double *operator[](int value);
   double const *operator[](int value) const;
+  
+  // exercise 68
+  // ===========
+  // Matrix const Matrix::operator+(Matrix const lhs, Matrix const rhs);
+  Matrix operator+(Matrix const &mat);
+  Matrix operator+=(Matrix const &mat);
 
 private:
   void copy(Matrix const &other);
