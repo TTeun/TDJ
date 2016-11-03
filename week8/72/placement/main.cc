@@ -5,9 +5,9 @@ using namespace std;
 
 extern char **environ;
 
-ostream& operator<<(ostream &ostr, Strings::Proxy obj){
-    ostr << obj.str();
-    return ostr;
+ostream &operator<<(ostream &ostr, Strings::Proxy obj) {
+  ostr << obj.str();
+  return ostr;
 }
 
 int main(int argc, char **argv) {
