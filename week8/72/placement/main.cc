@@ -5,6 +5,11 @@ using namespace std;
 
 extern char **environ;
 
+ostream& operator<<(ostream &ostr, Strings::Proxy obj){
+    ostr << obj.str();
+    return ostr;
+}
+
 int main(int argc, char **argv) {
   Strings args(argc, argv);
   Strings env(environ);
