@@ -20,10 +20,13 @@ class Strings
 
 		Strings &operator=(Strings const &rvalue);
 		Strings &operator=(Strings &&other);
-		
+			
         ~Strings();
 		
 		void swap(Strings &other);
+		
+		bool operator==(Strings const &other);
+		bool operator!=(Strings const &other);
 
         size_t size() const;
         size_t capacity() const;

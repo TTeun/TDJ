@@ -1,8 +1,8 @@
 #include "strings.ih"
 
-Strings &Strings::operator=(Strings const &rvalue)
+Strings &Strings::operator=(Strings const &rhs)
 {
-	Strings copy(rvalue);
+	Strings copy(rhs);
 	swap(copy);
 	return *this;
 }
