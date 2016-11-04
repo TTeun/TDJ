@@ -1,8 +1,40 @@
 #include "matrix.ih"
 
-Matrix Matrix::transpose() {
-  Matrix trans(d_nCols, d_nRows);
-  double *dataPtr = trans.row(0);
-  trCopy(dataPtr);
-  return trans;
+Matrix Matrix::transpose() const
+{
+//    Matrix ret(d_nCols, d_nRows);     // trivial (intuitive) implementation
+//
+//    double const *data = d_data;
+//
+//    for (size_t row = 0; row != d_nRows; ++row)
+//    {
+//        for (size_t col = 0; col != d_nCols; ++col)
+//            ret.el(col, row) = *data++;
+//    }
+//
+
+    Matrix ret;                             // optimized implementation
+
+    ret.d_nCols = d_nRows;                  // prepare the return Matrix
+    ret.d_nRows = d_nCols;
+    ret.d_data = new double[size()];
+
+    double *src = d_data;
+    double *destBeg = ret.d_data;
+
+                                // visit all rows. elements[0] of each
+                                // row define the subsequent elements of 
+                                // the first column, hence ++destBeg for
+                                // subsequent row-indices:
+    for (size_t row = 0; row != d_nRows; ++row, ++destBeg) 
+    {
+        double *dest = destBeg; // subsequent elements of the columns appear
+                                // nRows elements farther in the transposed 
+                                // matrix. Hence dest += d_nRows in the 
+                                // for-stmnt:
+        for (size_t col = 0; col != d_nCols; ++col, dest += d_nRows, ++src)
+            *dest = *src;
+    }
+        
+    return ret;
 }

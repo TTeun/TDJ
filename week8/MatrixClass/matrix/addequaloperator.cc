@@ -10,7 +10,7 @@ Matrix Matrix::operator+=(Matrix const &mat)
 	for(size_t counter = 0; counter != (d_nCols * d_nRows); counter++)
 		new_mat.d_data[counter] += mat.d_data[counter];
 
-	swap(new_mat, *this);
+	swap(new_mat);
 	
 	return new_mat;
 }

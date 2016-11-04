@@ -17,37 +17,16 @@ int main() {
   // exercise 67
   // ===========		
   
-  // Matrix mat(4, 6);
-  // mat[2][3] = 23.5;  
-  // memcpy(mat[1], mat[2], 6 * sizeof(double));
+  Matrix mat(4, 6);
+  mat[2][3] = 23.5;  
+  memcpy(mat[1], mat[2], 6 * sizeof(double));
   
+    for (size_t row = 0; row < mat.nRows(); ++row) {
+    for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
+      cout << *el << ' ';
+    cout << '\n';
+  }
   
-  // exercise 68
-  // ===========
-
-   // Matrix mat1(4, 8);
-   // Matrix mat2(4, 8);
-   
-   // mat1[2][3] = 23.5;
-   // mat2[2][3] = 25;
-   
-   // mat1 += mat2;
-
-   // Matrix mat3(mat1 + mat2);
-
-   // Matrix mat4 = mat3;
-
-   // mat4 = mat1 + mat2 + mat3;
-
-   // mat1 += mat2 += mat2 += mat3;
-		
-  
-  
-  // for (size_t row = 0; row < mat2.nRows(); ++row) {
-    // for (double *el = mat2.row(row); el != mat2.row(row) + mat2.nCols(); ++el)
-      // cout << *el << ' ';
-    // cout << '\n';
-  // }
   
   // exercise 68
   // ===========
@@ -58,9 +37,36 @@ int main() {
    mat1[2][3] = 23.5;
    mat2[2][3] = 25;
    
-   if(mat1 == mat2)
+   mat1 += mat2;
+
+   Matrix mat3(mat1 + mat2);
+
+   Matrix mat4 = mat3;
+
+   mat4 = mat1 + mat2 + mat3;
+
+   mat1 += mat2 += mat2 += mat3;
+		
+  
+  
+  for (size_t row = 0; row < mat2.nRows(); ++row) {
+    for (double *el = mat2.row(row); el != mat2.row(row) + mat2.nCols(); ++el)
+      cout << *el << ' ';
+    cout << '\n';
+  }
+  
+  // exercise 70
+  // ===========
+
+   Matrix mat11(4, 8);
+   Matrix mat22(4, 8);
+   
+   mat11[2][3] = 23.5;
+   mat22[2][3] = 25;
+   
+   if(mat11 == mat22)
 	   cout << "equality!\n";
-   if(mat1 != mat2)
+   if(mat11 != mat22)
 	   cout << "inequality!\n";
    
   //

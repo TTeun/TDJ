@@ -3,5 +3,4 @@
 bool Matrix::operator!=(Matrix const &mat)
 {
 	return !(*this == mat);
-
 }

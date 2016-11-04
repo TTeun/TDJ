@@ -12,5 +12,4 @@ bool Matrix::operator==(Matrix const &mat)
 	}
 	
 	return true;
-
 }

@@ -1,7 +1,20 @@
 #include "matrix.ih"
 
-Matrix::Matrix(size_t rows, size_t cols) {
-  d_nRows = rows;
-  d_nCols = cols;
-  d_data = new double[d_nRows * d_nCols];
+Matrix::Matrix(IniList iniList)
+:
+    d_nRows(iniList.size()),
+    d_nCols(iniList.begin()->size()),
+    d_data(new double[size()])
+{
+    auto ptr = d_data;
+    for (auto &list: iniList)
+    {
+        if (list.size() != d_nCols)
+        {
+            cerr << "Matrix(IniList): varying number of elements in rows\n";
+            exit(1);
+        }
+        memcpy(ptr, &*list.begin() , list.size() * sizeof(double));
+        ptr += list.size();
+    }
 }
