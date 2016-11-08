@@ -1,6 +1,6 @@
 #include "matrix.ih"
 
-Matrix Matrix::operator+(Matrix &mat)
+Matrix const Matrix::operator+(Matrix const &mat)
 {
 	if (!sizeCheck(mat)){
 		cerr << "Matrix sizes do not match.\n";

@@ -45,13 +45,19 @@ class Matrix
   
 		// exercise 68
 		// ===========
-		Matrix operator+(Matrix const &mat);
-		Matrix operator+=(Matrix const &mat);
+		bool const sizeCheck(Matrix const &mat);
+		bool sizeCheck(Matrix &mat);
+		Matrix const operator+(Matrix const &mat);
+		Matrix operator+(Matrix &mat);
+		Matrix const operator+=(Matrix const &mat);
+		Matrix operator+=(Matrix &mat);
   
 		// exercise 70
 		// ===========
-		bool operator==(Matrix const &mat);
-		bool operator!=(Matrix const &mat);
+		bool const operator==(Matrix const &mat);
+		bool operator==(Matrix &mat);
+		bool const operator!=(Matrix const &mat);
+		bool operator!=(Matrix &mat);
 
     
     private:

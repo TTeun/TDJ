@@ -6,6 +6,15 @@ using namespace std;
 
 // void toIdentity(Matrix *mat) { *mat = Matrix::identity(mat->nCols()); }
 
+void printMatrix(Matrix &mat2){
+for (size_t row = 0; row < mat2.nRows(); ++row) {
+    for (double *el = mat2.row(row); el != mat2.row(row) + mat2.nCols(); ++el)
+      cout << *el << ' ';
+    cout << '\n';
+  }
+ cout << '\n';
+}
+
 int main() {
 
   // Matrix mat({{1.0, 2.0, 3.0},
@@ -21,11 +30,7 @@ int main() {
   mat[2][3] = 23.5;  
   memcpy(mat[1], mat[2], 6 * sizeof(double));
   
-    for (size_t row = 0; row < mat.nRows(); ++row) {
-    for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
-      cout << *el << ' ';
-    cout << '\n';
-  }
+  printMatrix(mat);
   
   
   // exercise 68
@@ -38,31 +43,25 @@ int main() {
    mat2[2][3] = 25;
    
    mat1 += mat2;
-
-   Matrix mat3(mat1 + mat2);
+   
+   Matrix const mat3(mat1 + mat2);
 
    Matrix mat4 = mat3;
 
    mat4 = mat1 + mat2 + mat3;
 
    mat1 += mat2 += mat2 += mat3;
-		
-  
-  
-  for (size_t row = 0; row < mat2.nRows(); ++row) {
-    for (double *el = mat2.row(row); el != mat2.row(row) + mat2.nCols(); ++el)
-      cout << *el << ' ';
-    cout << '\n';
-  }
-  
+   
+   printMatrix(mat1);
+   
   // exercise 70
   // ===========
 
    Matrix mat11(4, 8);
-   Matrix mat22(4, 8);
+   Matrix const mat22(4, 8);
    
    mat11[2][3] = 23.5;
-   mat22[2][3] = 25;
+   // mat22[2][3] = 25;
    
    if(mat11 == mat22)
 	   cout << "equality!\n";
@@ -73,19 +72,10 @@ int main() {
   // cout << '\n';
   // mat = mat.transpose();
   //
-  // for (size_t row = 0; row < mat.nRows(); ++row) {
-  //   for (double *el = mat.row(row); el != mat.row(row) + mat.nCols(); ++el)
-  //     cout << *el << ' ';
-  //   cout << '\n';
-  // }
+  // printMatrix(mat);
   //
   // // cout << '\n';
   // Matrix mat44 = Matrix::identity(3);
 
-  // for (size_t row = 0; row < mat44.nRows(); ++row) {
-    // for (double *el = mat44.row(row); el != mat44.row(row) + mat44.nCols();
-         // ++el)
-      // cout << *el << ' ';
-    // cout << '\n';
-  // }
+  // printMatrix(mat44);
 }
