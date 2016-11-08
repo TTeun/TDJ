@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-bool Strings::operator!=(Strings &other)
+bool const Strings::operator!=(Strings const &other)
 {
 	return !(*this == other);
 }

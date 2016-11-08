@@ -25,8 +25,11 @@ class Strings
 		
 		void swap(Strings &other);
 		
-		bool operator==(Strings const &other);
-		bool operator!=(Strings const &other);
+		//New (in)equality members
+		bool const operator==(Strings const &other);
+		bool operator==(Strings &other);
+		bool const operator!=(Strings const &other);
+		bool operator!=(Strings &other);
 
         size_t size() const;
         size_t capacity() const;

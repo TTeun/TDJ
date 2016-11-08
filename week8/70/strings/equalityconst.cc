@@ -1,6 +1,6 @@
 #include "strings.ih"
 
-bool Strings::operator==(Strings &other)
+bool const Strings::operator==(Strings const &other)
 {
 	if (d_size != other.d_size)
 		return false;
